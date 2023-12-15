@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Documentos/Trabajo/adempiere-develop/JasperReportsTools/lib/jasperreports-6.17.0.jar"/>
+	<classpathentry kind="lib" path="D:/1.2 Trabajo/4/3 OFB/1 Reality/2023.12.12 Eclipse/adempiere-develop/JasperReportsTools/lib/jasperreports-6.17.0.jar"/>
 	<classpathentry kind="lib" path="lib/BOLDocumentoJDK142.jar"/>
 	<classpathentry kind="lib" path="lib/BOLFoliosJDK142.jar"/>
 	<classpathentry kind="lib" path="lib/BOLLibroJDK142.jar"/>
