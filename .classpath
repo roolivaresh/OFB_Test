@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Documentos/Trabajo/adempiere-develop/JasperReportsTools/lib/jasperreports-6.17.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Constanza Soubelet/Desktop/adempiere-develop/JasperReportsTools/lib/jasperreports-6.17.0.jar"/>
 	<classpathentry kind="lib" path="lib/BOLDocumentoJDK142.jar"/>
 	<classpathentry kind="lib" path="lib/BOLFoliosJDK142.jar"/>
 	<classpathentry kind="lib" path="lib/BOLLibroJDK142.jar"/>
@@ -32,6 +32,6 @@
 	<classpathentry kind="lib" path="lib/javax.activation-api-1.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-bundle-1.19.jar"/>
 	<classpathentry kind="lib" path="lib/tecnoback.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/adempiere-develop"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/adempiere_develop"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
