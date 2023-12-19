@@ -58,7 +58,7 @@ public class ModOFBModelOrdenDeCompra implements ModelValidator {
 			// Conectamos atrabes de Java a las columnas de la tabla
 			MRequisition req = (MRequisition) po;
 			
-			if(req.getC_Project_ID()==100) { // PESTAÑA REQUISISION > Proyacto Standart_Standart_-1_-1 
+			if(req.getC_Project_ID()==100) { // PESTAÑA REQUISISION > Proyecto Standart_Standart_-1_-1 
 				
 				// "Órdenes de Compra" GUARDAR DATO PARA LA PESTAÑA "Orden de Compra" (Cabecera)
 				// CREA UNA ORDEN DE COMPRA 
@@ -76,7 +76,10 @@ public class ModOFBModelOrdenDeCompra implements ModelValidator {
 				ord.setDatePromised(req.getDateRequired());
 				
 				// Datos Requeridos (Dependientes porque son datos de otra parte)
-				ord.setDescription("Se generó desde la solicitud n:"+req.getDocumentNo());
+				ord.setDescription(
+						"Se generó desde la solicitud n: " + req.getDocumentNo() +
+						" - Descripción de Requisición: " + req.getDescription()
+						);
 				ord.setC_DocTypeTarget_ID(126);
 				ord.setC_DocType_ID(126);
 				ord.setIsSOTrx(false);
@@ -109,16 +112,16 @@ public class ModOFBModelOrdenDeCompra implements ModelValidator {
 								ord.getC_BPartner_ID()
 								);
 						int BPLocationID = DB.getSQLValue(null,
-								"SELECT COALESCE(MAX(C_BPartner_Location_ID),0)" +
-								"FROM C_BPartner_Location" +
-								"WHERE ISACTIVE = 'Y' AND C_BPartner_ID =" +
+								"SELECT COALESCE(MAX(C_BPartner_Location_ID),0) " +
+								"FROM C_BPartner_Location " +
+								"WHERE ISACTIVE = 'Y' AND C_BPartner_ID = " +
 								//req.get_ValueAsInt("C_BPartner_ID")
 								ord.getC_BPartner_ID()
 						);
 						ordLine.setC_BPartner_Location_ID(BPLocationID);
 						int UOMID = DB.getSQLValue(null,
-								"SELECT C_UOM_ID"+
-								"FROM M_PRODUCT"+
+								"SELECT C_UOM_ID "+
+								"FROM M_PRODUCT "+
 							    "WHERE M_PRODUCT_ID = "+reqL.getM_Product_ID()
 							    );
 						ordLine.setC_UOM_ID(UOMID);
