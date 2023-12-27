@@ -28,20 +28,21 @@ import org.compiere.util.DB;
 /**
  *
  *
- * @author Rodrigo Olivares Hurtado
+ * @author Isaías Díaz Rojas
  * @version $Id: ProcessInventory.java $
  */
 public class ProcessCSACreateSCFromReq extends SvrProcess {
+	
 	// private String p_DocStatus = null;
 	private int p_Requisition_ID = 0;
-
 
 	/**
 	 * Prepare - e.g., get Parameters.
 	 */
 	@Override
 	protected void prepare() {
-		/*ProcessInfoParameter[] para = getParameter();
+		/*
+		ProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++) {
 			String name = para[i].getParameterName();
 
@@ -49,7 +50,8 @@ public class ProcessCSACreateSCFromReq extends SvrProcess {
 				p_Action = para[i].getParameterAsString();
 			else
 				log.log(Level.SEVERE, "Unknown Parameter: " + name);
-		}*/
+		}
+		*/
 		p_Requisition_ID = getRecord_ID();
 	} // prepare
 
@@ -118,6 +120,7 @@ public class ProcessCSACreateSCFromReq extends SvrProcess {
 								ord.getC_BPartner_ID()
 								);
 						int location_ID = ord.getC_BPartner_Location_ID();
+						/*
 						int BPLocationID = DB.getSQLValue(null,
 								"SELECT COALESCE(MAX(C_BPartner_Location_ID),0) " +
 								"FROM C_BPartner_Location " +
@@ -125,6 +128,7 @@ public class ProcessCSACreateSCFromReq extends SvrProcess {
 								//req.get_ValueAsInt("C_BPartner_ID")
 								ord.getC_BPartner_ID()
 						);
+						*/
 						ordLine.setC_BPartner_Location_ID(location_ID);
 						int UOMID = DB.getSQLValue(null,
 								"SELECT C_UOM_ID "+
