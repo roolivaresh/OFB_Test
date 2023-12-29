@@ -51,7 +51,7 @@ public final class AboutBox extends CDialog implements ActionListener
 
 
 
-	public static final String OFBVersion="OFBConsulting.com 20231130.A";
+	public static final String OFBVersion="OFBConsulting.com 20240104.A";
 
 
 
