@@ -4,6 +4,54 @@ import org.compiere.util.DB;
 
 public class OFBForward {
 
+	public static String PathBatIMacroNM()
+	{
+		String ruta = "";
+		try
+		{
+			ruta = DB.getSQLValueString(null, "Select MAX(Value) from AD_SysConfig where name='OFB_RutaBatImacroNM' ");
+			if(ruta == null)
+				ruta = "";
+		}
+		catch (Exception e)
+		{
+			ruta = "";
+		}
+		return ruta;
+	}
+	public static String PathBatUiVision()
+	{
+		String ruta = "";
+		try
+		{
+			ruta = DB.getSQLValueString(null, "SELECT MAX(value) FROM AD_SysConfig WHERE name='OFB_RutaBatUiVision' ");
+			if(ruta == null)
+				ruta = "";
+		}
+		catch (Exception e)
+		{
+			ruta = "";
+		}
+		return ruta;
+	}
+	public static int BATFileExecutionDuration()
+	{
+		int resp = 180000;
+		String textTime = "";
+		try
+		{
+			textTime = DB.getSQLValueString(null, "Select MAX(Value) from AD_SysConfig where name='OFB_BATFileExecutionDuration' ");
+			if(textTime == null)
+				textTime = "0";
+			resp = Integer.parseInt(textTime);
+		}
+		catch (Exception e)
+		{
+			textTime = "";
+			resp = 180000;
+		}
+		return resp;
+	}
 	public static int ValidDate()
 	{
 		int ps = 0;
